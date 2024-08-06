@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0288d1;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #03a9f4;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background-color: #0277bd;
+        }
+        .container {
+            padding: 20px;
+            display: none;
+        }
+        .container.active {
+            display: block;
+        }
+        footer {
+            background-color: #0288d1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <nav>
+        <a href="#" class="tablink" onclick="openTab(event, 'home')">Home</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'history')">History</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'geography')">Geography</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'culture')">Culture</a>
+        <a href="#" class="tablink" onclick="openTab(event, 'contact')">Contact</a>
+    </nav>
+    <div class="container" id="home">
+        <h2>Home</h2>
+        <p>Iceland is a Nordic island country in the North Atlantic Ocean and the most sparsely populated country in Europe. The capital and largest city is Reykjavík. Iceland is known for its stunning landscapes, including volcanoes, geysers, hot springs, and lava fields. Its climate is influenced by the Gulf Stream, making it warmer than its latitude would suggest.</p>
+    </div>
+    <div class="container" id="history">
+        <h2>History</h2>
+        <p>Iceland was settled in 874 AD when the Norwegian chieftain Ingólfr Arnarson became the first permanent settler on the island. Over the following centuries, Norsemen from Scandinavia established a unique commonwealth in Iceland. It remained independent until it became part of the Norwegian and later the Danish crown.</p>
+    </div>
+    <div class="container" id="geography">
+        <h2>Geography</h2>
+        <p>Iceland is located at the juncture of the North Atlantic and Arctic Oceans. The island is primarily volcanic and geothermal. It is characterized by its dramatic landscapes, which include waterfalls, glaciers, and black-sand beaches. The Mid-Atlantic Ridge, where the Eurasian and North American tectonic plates meet, runs through Iceland, causing significant geothermal activity.</p>
+    </div>
+    <div class="container" id="culture">
+        <h2>Culture</h2>
+        <p>Icelandic culture is rich and diverse, with strong roots in Norse traditions. Literature, particularly medieval sagas, plays a central role in the national identity. Modern Icelandic culture includes a vibrant music scene, dynamic contemporary art, and a strong emphasis on sustainable living and environmentalism.</p>
+    </div>
+    <div class="container" id="contact">
+        <h2>Contact</h2>
+        <p>If you have any questions or would like to learn more about Iceland, please contact us at info@icelandwebsite.com.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Iceland Website</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("container");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Default open tab
+        document.getElementsByClassName('tablink')[0].click();
+    </script>
+</body>
+</html>
